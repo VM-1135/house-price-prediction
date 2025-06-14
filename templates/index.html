@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>California Housing Price Prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card {
+      border-radius: 1rem;
+      padding: 2rem;
+      background-color: #ffffff;
+    }
+    .form-label small {
+      color: #6c757d;
+    }
+    .header-title {
+      font-weight: bold;
+    }
+    .note {
+      font-size: 0.95rem;
+      color: #6c757d;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="card shadow-lg">
+          <h2 class="text-center text-success header-title mb-4"> California Housing Price Prediction</h2>
+          <form method="POST" action="/predict">
+            <div class="mb-3">
+              <label class="form-label">Longitude <small>(Range: -124 to -114)</small></label>
+              <input type="number" step="any" name="longitude" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Latitude <small>(Range: 32 to 42)</small></label>
+              <input type="number" step="any" name="latitude" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Total Rooms <small>(e.g., 100 to 3000)</small></label>
+              <input type="number" step="any" name="total_rooms" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Total Bedrooms <small>(e.g., 50 to 2500)</small></label>
+              <input type="number" step="any" name="total_bedrooms" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Population <small>(e.g., 200 to 3000)</small></label>
+              <input type="number" step="any" name="population" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Households <small>(e.g., 50 to 2000)</small></label>
+              <input type="number" step="any" name="households" class="form-control" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg"> Predict Price</button>
+            </div>
+          </form>
+
+          {% if prediction_text %}
+          <div class="alert alert-info text-center mt-4">
+            <strong>{{ prediction_text }}</strong>
+          </div>
+          {% endif %}
+
+          <div class="note text-center mt-3">
+             <strong>Note:</strong> Please enter values within the valid range as described above. For more details, refer to the <code>README.md</code> file in the project folder.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
