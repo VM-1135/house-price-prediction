@@ -1,6 +1,6 @@
 # House Price Predictor
 
-This is a Flask-based web application that predicts house prices based on features like location, total rooms, bedrooms, population, and number of households. It uses a trained **Linear Regression** model with **scikit-learn** and serves predictions via a simple web interface.
+This is a Flask-based web application that predicts house prices based on features like longitude, latitude, total rooms, bedrooms, population, and number of households. It uses a trained **Linear Regression** model with **scikit-learn** and serves predictions via a simple web interface.
 
 
 ## Features
