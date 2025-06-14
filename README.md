@@ -50,6 +50,18 @@ House-price-predictor/
 
 
 
+#  Demo Screenshots
+
+# Input Form Page
+[Input Form] -> index.png
+
+#  Prediction Result Page
+[Prediction Result] -> predicted.png
+
+# Command Line Running the App
+[Command Prompt] -> cmdprompt.png
+
+
 # How to Run Locally
 
 1. **Clone the repository**:
